@@ -1,0 +1,49 @@
+.tooltip {
+    position: relative;
+
+    &:hover {
+    	&:before {
+		    background: fade(#000, 80%);
+		    .border-radius(.4em);
+		    color: #fff;
+		    content: attr(title);
+		    display: block;
+		    padding: .3em 1em;
+		    position: absolute;
+		    white-space: nowrap;
+		    z-index: 98;
+		}
+
+    	&:after {
+		    border: solid;
+		    border-color: fade(#000,  80%) transparent;
+		    border-width: .4em .4em 0 .4em;
+		    bottom: 1em;
+		    content: "";
+		    display: block;
+		    left: 2em;
+		    position: absolute;
+		    z-index: 99;
+		}
+    }
+
+    &.tooltip-top:hover {
+    	&:before { left: 0; bottom: 1.35em;}
+    	&:after {}
+    }
+
+    &.tooltip-right:hover {
+    	&:before { left: 0; bottom: 1.35em;}
+    	&:after {}
+    }
+
+    &.tooltip-bottom:hover {
+    	&:before { left: 0; bottom: 1.35em;}
+    	&:after {}
+    }
+
+    &.tooltip-left:hover {
+    	&:before { left: 0; bottom: 1.35em;}
+    	&:after {}
+    }
+}

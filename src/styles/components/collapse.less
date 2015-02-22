@@ -1,0 +1,31 @@
+.collapse {
+	border: 1px solid #ccc;
+
+	label {
+		display: block;
+		background:#eee;
+		padding: 5px 15px;
+	}
+
+	.inner {
+		max-height: 0;
+		overflow: hidden;
+		.transition(max-height .4s);
+	}
+
+	.content {
+		padding: 15px;
+	}
+	
+	input {
+		display: none;
+
+		&:checked ~ label {
+			border-bottom: 1px solid #ccc;
+		}
+
+		&:checked ~ .inner {
+			max-height: 200px;
+		}
+	}
+}

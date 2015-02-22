@@ -1,0 +1,44 @@
+ul.accordion {
+	margin: 0;
+	padding: 0;
+	border: 1px solid #ccc;
+
+	& > li {
+		margin: 0;
+		padding: 0;
+	}
+
+
+	& > li > input {
+		display: none;
+	}
+	
+
+	& > li > label {
+		display: block;
+		background:#eee;
+		padding: .5em 1.5em;
+	}
+
+	.inner {
+		max-height: 0;
+		overflow: hidden;
+		.transition(max-height .4s);
+	}
+
+	.content {
+		padding: 15px;
+	}
+
+	input {
+		display: none;
+
+		&:checked + label {
+			border-bottom: 1px solid #ccc;
+		}
+
+		&:checked ~ .inner {
+			max-height: 200px;
+		}
+	}
+}

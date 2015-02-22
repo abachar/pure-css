@@ -1,0 +1,67 @@
+.modal {
+	input {
+		display: none;
+
+		&:checked ~ .overlay {
+			display: block;
+		}
+
+
+		&:checked ~ .dialog {
+			top: 150px;
+			display: block;
+		}
+	}
+
+	.overlay {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: fade(#000,  80%);
+	}
+
+	.dialog {
+		left: 50%;
+		top: 0;
+		margin-left: -250px;
+		display: none;
+		position: fixed;
+		background: #fff;
+		border: 1px solid #ccc;
+		.border-radius(5px);
+		width: 500px;
+
+		.transition(top 4s);
+
+		header {
+			position: relative;
+
+			h1 {
+				font-size: 2em;
+				text-align: left;
+				padding: .5em 1em;
+				margin: 0;
+			}
+
+			.close {
+				position: absolute;
+				right: 1em;
+				top: 0;
+				line-height: 2;
+				font-size: 2em;
+			}
+		}
+
+		.content {
+			padding: 1em;
+		}
+
+		footer {
+			text-align: center;
+			padding-bottom: 1em;
+		}
+	}
+}
