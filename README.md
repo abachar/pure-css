@@ -36,10 +36,13 @@
 ### Compatibilité
 
 ## Exemples
-### Yes/No
-### Slider
-### Mobile Menu
-### Modal
-### Accordion
+#### Toggle
+#### Collabse
+#### Accordion
+#### Slider
+#### Modal
+#### Mobile Menu
+#### Tabs
+#### Tooltip
 
 ## Conclusion
