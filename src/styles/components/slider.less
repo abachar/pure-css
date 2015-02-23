@@ -1,0 +1,45 @@
+.slider {
+  position: relative;
+  width: 600px;
+  background: red;
+  margin: 4px auto;
+  border-radius: 15px;
+  height: 30px;
+
+  input {
+    display: none;
+  }
+  
+  label {
+    position: relative;
+    display: inline-block;
+    width: 33.3333%;
+    line-height: 30px;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .handle {
+    height: 30px;
+    width: 30px;
+    background: blue;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    transition: left .4s ease;
+    margin-left: 85px;
+  }
+  
+  #slider-choice-1:checked ~ .handle {
+    left: 0;
+  }
+  
+  #slider-choice-2:checked ~ .handle {
+    left: 33.3333%;
+  }
+  
+  #slider-choice-3:checked ~ .handle {
+    left: 66.6666%;
+  }
+}
