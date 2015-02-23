@@ -18,10 +18,10 @@
 - Un sélecteur est un "nom" qui indique à quels éléments d'une page HTML on desire appliquer une règle.
 - Chaque règle CSS commence nécessairement par un sélecteur.
 
-##### ::after et ::before
+##### :after et :before
 
-- **::after** permet d'inserer du contenue apres un element
-- **::before** permet d'inserer du contenue avant un element
+- **:after** permet d'inserer du contenue apres un element
+- **:before** permet d'inserer du contenue avant un element
 
 ##### :checked
 
@@ -31,9 +31,13 @@
 
 - **Sélecteur adjacent** Permet de cibler un element qui est *immédiatement* précédé par le premier élément ciblé
 
+##### element ~ element
+
 ### Les Transitions
 
 ### Compatibilité
+
+### CodePen
 
 ## Exemples
 #### Toggle
