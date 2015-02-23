@@ -14,7 +14,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('font', function() {
-  gulp.src('src/fonts/*')
+  gulp.src('src/fonts/**/*')
       .pipe(gulp.dest('dist/fonts'));
 });
 

@@ -1,0 +1,113 @@
+.menu {
+    input {
+        display: none;
+
+        &:checked ~ nav {
+            right: 0px;
+        }
+
+        &:checked ~ .overlay {
+            display: block;
+        }
+    }
+
+    .close {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        color: fade(#fff,  30%);
+        z-index: 3;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: fade(#000,  40%);
+        z-index: 1;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        bottom: 0;
+        width: 300px;
+        background: #333333;
+        color: #fff;
+        z-index: 2;
+        transition: right .4s ease;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            li {
+                margin: 0;
+                padding: 0;
+
+                &.seperator {
+                    background: fade(#fff,  10%);
+                    height: 1px;
+                    margin: .5em 0;
+                }
+            }
+        }
+
+        h3 {
+            margin: 0;
+            padding: .5em 14px;
+            font-size: 3em;
+        }
+
+        h5 {
+            font-size: 1.1em;
+            margin: 0;
+            padding: .5em 14px;
+            text-transform: uppercase;
+            color: fade(#fff,  30%);
+        }
+
+        a {
+            display: block;
+            margin: 0;
+            padding: .5em 1em;
+            color: fade(#fff,  80%);
+            text-decoration: none;
+            transition: background .3s ease;
+
+            &:hover {
+                background: #242424;
+            }
+        }
+    }
+
+}
+
+/*
+    <div class="menu">
+	<input type="checkbox" id="mobile-menu"/>
+    <label for="mobile-menu" class="close icon icon-cancel"></label>
+
+    <nav>
+    	<h3>Pure CSS</h2>
+    	<ul>
+    		<li><h5>Components</h5></li>
+    		<li><a href="#">Toggle</a></li>
+    		<li><a href="#">Collapse</a></li>
+    		<li><a href="#">Accordion</a></li>
+    		<li><a href="#">Slider</a></li>
+    		<li><a href="#">Modal</a></li>
+    		<li><a href="#">Menu</a></li>
+    		<li><a href="#">Tab</a></li>
+    		<li><a href="#">Tooltip</a></li>
+    		<li><a href="#">Spinner</a></li>
+    		<li class="seperator"></li>
+    		<li><h5>Abdelhakim Bachar</h5></li>
+    	</ul>
+    </nav>
+</div>*/

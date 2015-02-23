@@ -1,10 +1,17 @@
 @font-face {
-  .font-face('Lato', ~'../fonts/lato/Lato', normal, normal);
+  .font-face('Lato', ~'../fonts/Lato/Lato', normal, normal);
   text-rendering: optimizeLegibility;
 }
 
 @font-face {
-  .font-face('icons', ~'../fonts/icons/icons', normal, normal);
+  font-family: 'icons';
+  src: url('../fonts/icons/icons.eot?18931090');
+  src: url('../fonts/icons/icons.eot?18931090#iefix') format('embedded-opentype'),
+       url('../fonts/icons/icons.woff?18931090') format('woff'),
+       url('../fonts/icons/icons.ttf?18931090') format('truetype'),
+       url('../fonts/icons/icons.svg?18931090#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
@@ -36,17 +43,21 @@ h2 {
 	}
 }
 
-.icon :before {
-	font-family: "icons";
-	display: inline-block;
-	width: 1em;
-	margin-right: .2em;
-	text-align: center;
-	line-height: 1em;
-	margin-left: .2em;
-
+.icon {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  width: 1em;
+  margin-right: .2em;
+  line-height: 1em;
+  margin-left: .2em;
+	
 	&.icon-cancel:before { content: '\e800'; }
 	&.icon-angle-right:before { content: '\e801'; }
 	&.icon-angle-down:before { content: '\e802'; }
 	&.icon-menu:before { content: '\e803'; }
+	&.icon-spinner:before { content: '\e804'; }
 }
+
+ 

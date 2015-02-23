@@ -1,0 +1,8 @@
+# OS X hidden file
+.DS_Store
+
+# Dependency directory
+node_modules
+
+# Compiled binary
+dist
