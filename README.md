@@ -37,7 +37,9 @@
 
 ### Compatibilité
 
-### CodePen
+### Tools
+- CodePen
+- ColorHexa : http://www.colorhexa.com/
 
 ## Exemples
 #### Toggle
