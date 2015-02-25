@@ -42,4 +42,4 @@ gulp.task('watch', function() {
   gulp.watch('src/**/*.html', ['html']);
 });
 
-gulp.task('default', ['font', 'styles', 'html', 'connect', 'watch']);
+gulp.task('serve', ['font', 'styles', 'html', 'connect', 'watch']);
