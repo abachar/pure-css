@@ -1,3 +1,6 @@
+@dialog-bg: @white;
+@dialog-border-color: @gray;
+
 .modal {
 	input {
 		display: none;
@@ -9,31 +12,26 @@
 
 		&:checked ~ .dialog {
 			top: 150px;
-			display: block;
 		}
 	}
 
 	.overlay {
 		display: none;
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background: fade(#000,  80%);
+		top: 0; left: 0; right: 0; bottom: 0;
+		background: @overlay-bg;
+		z-index: 10;
 	}
 
 	.dialog {
-		left: 50%;
-		top: 0;
-		margin-left: -250px;
-		display: none;
 		position: fixed;
-		background: #fff;
-		border: 1px solid #ccc;
-		.border-radius(5px);
-		width: 500px;
-
+		width: 30em;
+		left: 50%; top: 0;
+		margin-left: -15em;
+		background: @dialog-bg;
+		border: 1px solid @dialog-border-color;
+		z-index: 11;
+		.border-radius(.4em);
 		.transition(top 4s);
 
 		header {
