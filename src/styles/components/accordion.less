@@ -1,44 +1,35 @@
-ul.accordion {
-	margin: 0;
-	padding: 0;
-	border: 1px solid #ccc;
+@label-bg: lighten(@gray, 10%);
+@border-color: @gray;
 
-	& > li {
-		margin: 0;
-		padding: 0;
-	}
+.accordion {
+	border: 1px solid @border-color;
 
+	.panel {
+		input[id^="accordion-"] {
+			display: none;
 
-	& > li > input {
-		display: none;
-	}
-	
-
-	& > li > label {
-		display: block;
-		background:#eee;
-		padding: .5em 1.5em;
-	}
-
-	.inner {
-		max-height: 0;
-		overflow: hidden;
-		.transition(max-height .4s);
-	}
-
-	.content {
-		padding: 15px;
-	}
-
-	input {
-		display: none;
-
-		&:checked + label {
-			border-bottom: 1px solid #ccc;
+			&:checked ~ .inner {
+				max-height: 200px;
+				border-top: 1px solid @border-color;
+				border-bottom: 1px solid @border-color;
+			}
 		}
 
-		&:checked ~ .inner {
-			max-height: 200px;
+		> label {
+			display: block;
+			background: @label-bg;
+			padding: .6em 1em;
 		}
+
+		.inner {
+			max-height: 0;
+			overflow: hidden;
+			.transition(max-height .4s);
+
+			.content {
+				padding: 1em;
+			}
+		}
+
 	}
 }
