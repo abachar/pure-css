@@ -1,16 +1,20 @@
+@no-bg: @red;
+@yes-bg: @green;
+@handle-bg: radial-gradient(@white, darken(@white, 10%));
+
 .toggle {
   position: relative;
-  padding-left: 50px;
+  padding-left: 3em;
 
   input {
-    display: none; /* Ou bien position: absolute; top: -9999px; left: -9999px; */
+    display: none; // Ou bien position: absolute; top: -9999px; left: -9999px;
 
     &:checked + label {
       &::before {
-        background: green;
+        background: @yes-bg;
       }
       &::after {
-        left: 20px;
+        left: 1.2em;
       }
     }
   }
@@ -18,20 +22,20 @@
   label::before, label::after {
     content: '';
     position: absolute;
-    height: 20px;
+    height: 1.2em;
     left: 0;
-    .border-radius(10px);
+    .border-radius(.6em);
   }
 
   label::before {
-    width: 40px;
-    background: #e60028;
+    width: 2.4em;
+    background: @no-bg;
     .transition(background .4s);
   }
 
   label::after {
-    width: 20px;
-    .background-image(linear-gradient(to bottom, black 0%, #dedede 100%));
-    .transition(left .4s);
+    width: 1.2em;
+    .background-image(@handle-bg);
+    .transition(left .3s);
   }
 }
