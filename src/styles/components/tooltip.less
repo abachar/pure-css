@@ -1,49 +1,86 @@
+@arrowSize: 6px;
+
+.vertical-tooltip(@position, @propertyY) {
+  &:before, &:after {
+    @{propertyY}: 100%;
+    left: 50%;
+  }
+
+  &:before {
+    border-@{position}-color: @tooltip-bg;
+    margin-@{propertyY}: -@arrowSize;
+    margin-left: -@arrowSize;
+  }
+  &:after {
+    margin-left: -4 * @arrowSize;
+    margin-@{propertyY}: @arrowSize;
+  }
+}
+
+.horizontal-tooltip(@position, @propertyX) {
+  &:before, &:after {
+    @{propertyX}: 100%;
+    bottom: 50%;
+  }
+
+  &:before {
+    border-@{position}-color: @tooltip-bg;
+    margin-bottom: -@arrowSize;
+  }
+  &:after {
+    margin-@{propertyX}: 2 * @arrowSize;
+    margin-bottom: -1.1em;
+  }
+}
+
 .tooltip {
-    position: relative;
+  position: relative;
+  display: inline-block;
 
-    &:hover {
-    	&:before {
-		    background: fade(#000, 80%);
-		    .border-radius(.4em);
-		    color: #fff;
-		    content: attr(title);
-		    display: block;
-		    padding: .3em 1em;
-		    position: absolute;
-		    white-space: nowrap;
-		    z-index: 98;
-		}
+  &:before, &:after {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: @tooltip-z-index;
+  }
 
-    	&:after {
-		    border: solid;
-		    border-color: fade(#000,  80%) transparent;
-		    border-width: .4em .4em 0 .4em;
-		    bottom: 1em;
-		    content: "";
-		    display: block;
-		    left: 2em;
-		    position: absolute;
-		    z-index: 99;
-		}
+  // The arrow
+  &:before {
+    border: @arrowSize solid transparent;
+    background: transparent;
+    content: " ";
+  }
+
+  // Tooltip text
+  &:after {
+    content: attr(title);
+    background: @tooltip-bg;
+    color: @tooltip-color;
+    padding: .3em 1em;
+    white-space: nowrap;
+    .border-radius(.4em);
+  }
+
+  &:hover {
+    &:before, &:after {
+      visibility: visible;
+      opacity: 1;
     }
+  }
 
-    &.tooltip-top:hover {
-    	&:before { left: 0; bottom: 1.35em;}
-    	&:after {}
-    }
+  &.tooltip-top {
+    .vertical-tooltip(top, bottom);
+  }
 
-    &.tooltip-right:hover {
-    	&:before { left: 0; bottom: 1.35em;}
-    	&:after {}
-    }
+  &.tooltip-bottom {
+    .vertical-tooltip(bottom, top);
+  }
 
-    &.tooltip-bottom:hover {
-    	&:before { left: 0; bottom: 1.35em;}
-    	&:after {}
-    }
+  &.tooltip-right {
+    .horizontal-tooltip(right, left);
+  }
 
-    &.tooltip-left:hover {
-    	&:before { left: 0; bottom: 1.35em;}
-    	&:after {}
-    }
+  &.tooltip-left {
+    .horizontal-tooltip(left, right);
+  }
 }
