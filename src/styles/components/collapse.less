@@ -1,31 +1,30 @@
-@label-bg: lighten(@gray, 10%);
-@border-color: @gray;
-
 .collapse {
-	border: 1px solid @border-color;
+  border: 1px solid @collapse-border-color;
 
-	input[id^="collapse-"] {
-		display: none;
+  input[id^="collapse-"] {
+    display: none;
 
-		&:checked ~ .inner {
-			max-height: 200px;
-			border-top: 1px solid @border-color;
-		}
-	}
+    &:checked ~ .inner {
+      max-height: 200px;
+      border-top: 1px solid @collapse-border-color;
+    }
 
-	label {
-		display: block;
-		background: @label-bg;
-		padding: .6em 1em;
-	}
+    + label {
+      display: block;
+      background: @collapse-label-bg;
+      padding: .6em 1em;
+    }
+  }
 
-	.inner {
-		max-height: 0;
-		overflow: hidden;
-		.transition(max-height .4s);
 
-		.content {
-			padding: 1em;
-		}
-	}
+
+  .inner {
+    max-height: 0;
+    overflow: hidden;
+    .transition(max-height .4s);
+
+    .content {
+      padding: 1em;
+    }
+  }
 }
