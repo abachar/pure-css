@@ -1,65 +1,46 @@
-@slider-bg: @cyan;
-@slider-handle-bg: darken(@cyan, 20%);
-
 .slider {
   position: relative;
-  width: 600px;
+  width: 40em;
   height: 2em;
   margin: 0 auto 3em auto;
-  .border-radius(1em);
 
   &:before {
     content: " ";
-    background: @slider-bg; 
-    height: .3em;
-    .border-radius(.2em);
+    background: @slider-bg;
+    height: 4px;
+    .border-radius(2px);
     position: absolute;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     top: 2.8em;
   }
 
-  input {
+  input[id^="slider-"] {
     display: none;
+
+    + label {
+      display: inline-block;
+      text-align: center;
+      width: 25%;
+      height: 3em;
+      z-index: @slider-z-index;
+    }
   }
 
-  label {
-    position: relative;
-    display: inline-block;
-    width: 25%;
-    line-height: 2em;
-    text-align: center;
-    z-index: 2;
-    height: 3em;
-  }
-  
   .handle {
+    position: absolute;
+    left: 0; top: 2em;
     background: @slider-handle-bg;
     height: 2em;
     width: 2em;
+    margin-left: 4em; // 2 eme étape
+    z-index: @slider-z-index;
     .border-radius(1em);
-    position: absolute;
-    left: 0;
-    top: 2em;
-
-    border-radius: 15px;
-    transition: left .4s ease;
-    margin-left: 10%;
-    z-index: 1;
-  }
-  
-  #slider-choice-1:checked ~ .handle {
-    left: 0;
-  }
-  
-  #slider-choice-2:checked ~ .handle {
-    left: 25%;
-  }
-  
-  #slider-choice-3:checked ~ .handle {
-    left: 50%;
+    .transition(left .4s);
   }
 
-  #slider-choice-4:checked ~ .handle {
-    left: 75%;
-  }
+  #slider-choice-1:checked ~ .handle { left: 0; }
+  #slider-choice-2:checked ~ .handle { left: 25%; }
+  #slider-choice-3:checked ~ .handle { left: 50%; }
+  #slider-choice-4:checked ~ .handle { left: 75%; }
 }
