@@ -1,68 +1,63 @@
-@dialog-bg: @white;
-@dialog-border-color: @gray;
-
 .modal {
-	input {
-		display: none;
+  input[id^="modal-"] {
+    display: none;
 
-		&:checked ~ .overlay {
-			display: block;
-		}
+    &:checked ~ .overlay {
+      display: block;
+    }
 
+    &:checked ~ .dialog {
+      display: block;
+    }
+  }
 
-		&:checked ~ .dialog {
-			top: 150px;
-		}
-	}
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: @overlay-bg;
+    z-index: @overlay-z-index;
+  }
 
-	.overlay {
-		display: none;
-		position: fixed;
-		top: 0; left: 0; right: 0; bottom: 0;
-		background: @overlay-bg;
-		z-index: 10;
-	}
+  .dialog {
+    display: none;
+    position: fixed;
+    width: 30em;
+    left: 50%;  top: 5em;
+    margin-left: -15em;
+    background: @dialog-bg;
+    border: 1px solid @dialog-border-color;
+    z-index: @dialog-z-index;
+    .border-radius(.4em);
 
-	.dialog {
-		position: fixed;
-		width: 30em;
-		left: 50%; top: 0;
-		margin-left: -15em;
-		background: @dialog-bg;
-		border: 1px solid @dialog-border-color;
-		z-index: 11;
-		.border-radius(.4em);
-		.transition(top 4s);
+    header {
+      position: relative;
 
-		header {
-			position: relative;
+      h1 {
+        font-size: 2em;
+        text-align: left;
+        padding: .5em 1em;
+        margin: 0;
+      }
 
-			h1 {
-				font-size: 2em;
-				text-align: left;
-				padding: .5em 1em;
-				margin: 0;
-			}
+      .close {
+        position: absolute;
+        right: 2em;
+        top: 1em;
+        line-height: 2;
+        font-size: 1em;
+        width: auto;
+        margin: 0;
+      }
+    }
 
-			.close {
-				position: absolute;
-				right: 2em;
-				top: 1em;
-				line-height: 2;
-				font-size: 1em;
+    .content {
+      padding: 1em;
+    }
 
-				width: auto;
-				margin: 0;
-			}
-		}
-
-		.content {
-			padding: 1em;
-		}
-
-		footer {
-			text-align: center;
-			padding-bottom: 1em;
-		}
-	}
+    footer {
+      text-align: center;
+      padding-bottom: 1em;
+    }
+  }
 }
