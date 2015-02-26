@@ -1,25 +1,22 @@
-@no-bg: @red;
-@yes-bg: @green;
-@handle-bg: radial-gradient(@white, darken(@white, 10%));
-
 .toggle {
   position: relative;
   padding-left: 3em;
 
-  input {
+  input[id^="toggle-"] {
     display: none; // Ou bien position: absolute; top: -9999px; left: -9999px;
 
     &:checked + label {
-      &::before {
-        background: @yes-bg;
+      &:before {
+        background: @toggle-no-bg;
       }
-      &::after {
+
+      &:after {
         left: 1.2em;
       }
     }
   }
 
-  label::before, label::after {
+  label:before, label:after {
     content: '';
     position: absolute;
     height: 1.2em;
@@ -27,15 +24,15 @@
     .border-radius(.6em);
   }
 
-  label::before {
+  label:before {
     width: 2.4em;
-    background: @no-bg;
+    background: @toggle-no-bg;
     .transition(background .4s);
   }
 
-  label::after {
+  label:after {
     width: 1.2em;
-    .background-image(@handle-bg);
-    .transition(left .3s);
+    .background-image(@toggle-handle-bg);
+    .transition(left .4s);
   }
 }
