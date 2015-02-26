@@ -1,52 +1,50 @@
-// Buttons
-@button-bg: @cyan;
-@button-hover-bg: darken(@cyan, 5%);
-@button-color: @white;
-
 @font-face {
-  .font-face('Lato', ~'../fonts/Lato/Lato', normal, normal);
-  text-rendering: optimizeLegibility;
+  .font-face('Lato Light', ~'../fonts/Lato/Lato-Light', normal, normal);
 }
 
 @font-face {
- .font-face('icons', ~'../fonts/icons/icons', normal, normal);
+  .font-face('icons', ~'../fonts/icons/icons', normal, normal);
+}
+
+html, body {
+  font-size: 100%;
 }
 
 body {
-	font-family: serif; // Lato
-	padding-bottom: 100px;
+  font-family: 'Lato Light', serif;
+  line-height: 150%;
+  padding-bottom: 100px;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
-	font-size: 3rem;
-	display: block;
-	text-align: center;
+  font-size: 3rem;
+  display: block;
+  text-align: center;
 }
 
 h2 {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 //
-// Button component 
-//
+// Button component
 .button {
-	display: inline-block;
-	border: 0;
-	cursor: pointer;
-	border-radius: 2px;
-	background-color: @button-bg;
-	color: @button-color;
-	padding: 0.9rem 1.7rem;
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  border-radius: 0.2em;
+  background-color: @button-bg;
+  color: @button-color;
+  padding: 0.6em 1.5em;
 
-	&:hover {
-		background-color: @button-hover-bg;
-	}
+  &:hover {
+    background-color: @button-hover-bg;
+  }
 }
 
 // 
 // Fontello icons
-// 
 .icon {
   font-family: "icons";
   font-style: normal;
@@ -56,12 +54,20 @@ h2 {
   margin-right: .2em;
   line-height: 1em;
   margin-left: .2em;
-	
-	&.icon-cancel:before { content: '\e800'; }
-	&.icon-angle-right:before { content: '\e801'; }
-	&.icon-angle-down:before { content: '\e802'; }
-	&.icon-menu:before { content: '\e803'; }
-	&.icon-spinner:before { content: '\e804'; }
-}
 
- 
+  &.icon-cancel:before {
+    content: '\e800';
+  }
+  &.icon-angle-right:before {
+    content: '\e801';
+  }
+  &.icon-angle-down:before {
+    content: '\e802';
+  }
+  &.icon-menu:before {
+    content: '\e803';
+  }
+  &.icon-spinner:before {
+    content: '\e804';
+  }
+}
