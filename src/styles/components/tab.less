@@ -1,64 +1,57 @@
-ul.tabs {
-	margin: 0;
-	padding: 0;
-	position: relative;
+@darken-tab-bg: darken(@tab-bg, 15%);
 
-	&:after {
-		content: "";
-		clear: both;
-	}
+.tabs {
+  position: relative;
+  height: 300px;
 
-	& > li {
-		margin: 0;
-		padding: 0;
-		float: left;
-    	display: block;
-	}
+  &:after {
+    clear: both;
+    content: " ";
+  }
 
+  .panel {
+    float: left;
 
-	& > li > input {
-		display: none;
-	}
+    input[id^="tab-"] {
+      display: none;
 
-	label {
-		display: block;
-	    padding: 14px 21px;
-	    border-radius: 2px 2px 0 0;
-	    font-size: 20px;
-	    font-weight: normal;
-	    text-transform: uppercase;
-	    background: #ccc;
-	    cursor: pointer;
-	    position: relative;
-	    top: 4px; 
-	    //@include transition(all 0.2s ease-in-out);
+      &:checked {
+        + label {
+          top: 0;
+          padding-top: .9em;
+          background: @darken-tab-bg;
+        }
 
-	    &:hover {
-	      background: darken(#ccc, 10);
-	    }
-	}
+        ~ .content {
+          display: block;
+        }
+      }
+    }
 
-	.content {
-	    z-index: 2;
-	    display: none; 
-	    overflow: hidden;
-	    width: 100%;
-	    font-size: 17px;
-	    line-height: 25px;
-	    padding: 25px;  
-	    position: absolute;
-	    top: 53px;
-	    left: 0; 
-	    background: darken(#ccc, 15);
-  	}
+    label {
+      position: relative;
+      display: block;
+      top: .2em;
+      padding: .7em 1.8em;
+      text-transform: uppercase;
+      background: @tab-bg;
+      .border-radius(.2em .2em 0 0);
+      .transition(all 0.2s ease-in-out);
 
-	[id^="tab"]:checked + label { 
-		top: 0;
-		padding-top: 17px; 
-		background: darken(#ccc, 15); 
-	}
+      &:hover {
+        background: darken(@tab-bg, 10%);
+      }
+    }
 
-	[id^="tab"]:checked ~ [class="content"] {
-		display: block;
-	}
+    .content {
+      z-index: 2;
+      display: none;
+      overflow: hidden;
+      padding: 1em;
+      position: absolute;
+      top: 3.1em; right: 0; left: 0; bottom: 0;
+      background: @darken-tab-bg;
+      .border-top-right-radius(.2em);
+    }
+  }
 }
