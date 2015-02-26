@@ -8,30 +8,46 @@
 @oil  : #333333;
 
 // Commons
-@overlay-bg: fade(@black,  70%);
+@overlay-bg: fade(@black, 70%);
+@overlay-z-index: 10;
 
+// Buttons
+@button-bg: @cyan;
+@button-hover-bg: darken(@cyan, 5%);
+@button-color: @white;
 
-/*
+// Toggle
+@toggle-no-bg: @red;
+@toggle-yes-bg: @green;
+@toggle-handle-bg: radial-gradient(@white, darken(@white, 10%));
 
+// Collapse
+@collapse-label-bg: lighten(@gray, 10%);
+@collapse-border-color: @gray;
 
-@tooltip-bg-color: fade(@black, 80%);
-@tooltip-color: @white;
+// Accordion
+@accordion-label-bg: @collapse-label-bg;
+@accordion-border-color: @collapse-border-color;
 
+// Slider
+@slider-bg: @cyan;
+@slider-handle-bg: darken(@cyan, 20%);
+@slider-z-index: 1;
 
-@menu-color: @white;
-@menu-bg: @oil;
-@menu-link-color: fade(@white,  80%);
-@menu-link-bg: @menu-bg-color;
-@menu-link-bg-hover: darken(@menu-link-bg, 5%);
-@menu-label-color: fade(@white,  30%);
-@menu-separator-color: fade(@white,  10%);
-
+// Dialog
 @dialog-bg: @white;
 @dialog-border-color: @gray;
+@dialog-z-index: @overlay-z-index + 1;
 
-@tab-title-bg: @gray;
-@tab-title-bg-hover: darken(@gray, 10%);
-@tab-title-bg-selected: darken(@gray, 20%);
-@tab-content-bg: darken(@gray, 20%);
+// Menu
+@menu-bg: @oil;
+@menu-color: @white;
+@menu-z-index: @overlay-z-index + 1;
 
-*/
+// Tabs
+@tab-bg: @gray;
+
+// Tooltips
+@tooltip-bg: fade(@black, 80%);
+@tooltip-z-index: 1;
+@tooltip-color: @white;
