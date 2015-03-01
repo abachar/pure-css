@@ -42,13 +42,12 @@
 - ColorHexa : http://www.colorhexa.com/
 
 ## Exemples
-#### Toggle
-#### Collabse
-#### Accordion
-#### Slider
-#### Modal
-#### Mobile Menu
-#### Tabs
-#### Tooltip
-
-## Conclusion
+- Toggle
+- Collabse
+- Accordion
+- Slider
+- Modal
+- Mobile Menu
+- Tabs
+- Tooltip
+- Spinner
