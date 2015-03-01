@@ -2,10 +2,8 @@
 
 ## CSS
 
-- Cascading Style Sheets
-- 
-- Permettent de définir des règles appliquées à un ou plusieurs documents HTML (positionnement, alignement, font, couleurs...)
-- Séparer la structure d'un document HTML et sa présentation
+Un langage qui permet de gérer la présentation d'une page Web, en définissant des règles appliquées à un ou plusieurs documents HTML (positionnement, alignement, font, couleurs...).
+Il permet de séparer la structure d'un document HTML et sa présentation
 
 - CSS 1: Des implémentations difficiles pendant la guerre des navigateurs.
 - CSS 2: Des ambitions précipitées
@@ -15,8 +13,8 @@
 
 ### Les Selecteurs
 
-- Un sélecteur est un "nom" qui indique à quels éléments d'une page HTML on desire appliquer une règle.
-- Chaque règle CSS commence nécessairement par un sélecteur.
+Un sélecteur est un "nom" qui indique à quels éléments d'une page HTML on desire appliquer une règle.
+- 
 
 ##### :after et :before
 
