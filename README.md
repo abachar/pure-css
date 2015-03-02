@@ -34,7 +34,16 @@ Comme le sélecteur adjacent mais moins strict, alors qu'un sélecteur adjacent 
 
 ### Les Transitions
 
+Permet une transition douce entre l'ancienne valeur et la nouvelle valeur d'une propriété CSS lorsqu'un événement est déclenché via :
+
+- Pseudo-classe :hover, :checked
+- JavaScript
+
 ### Compatibilité
+
+- Fonctionne parfaitement sur Chrome, Firefox, Safari et Opera 
+- IE9 Pour les sélecteurs
+- IE10 Pour les transitions
 
 ### Tools
 - CodePen : http://www.codepen.io/
