@@ -1,5 +1,7 @@
 # Pure CSS
 
+[Regarder la présentation ici](http://abachar.github.io/pure-css)
+
 ## CSS
 
 Un langage qui permet de gérer la présentation d'une page Web, en définissant des règles appliquées à un ou plusieurs documents HTML (positionnement, alignement, font, couleurs...).
