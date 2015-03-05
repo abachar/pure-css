@@ -102,20 +102,44 @@
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<h2>Le Poids des Sélecteurs CSS</h2>
+					<ul>
+							<li class="fragment">0,0,0,0,0 : Sélecteur universel *, Style du navigateur</li>
+							<li class="fragment">0,0,0,0,1 : Sélecteur element</li>
+							<li class="fragment">0,0,0,1,0 : Sélecteur classe, Sélecteur d’attribut, Pseudo-classe</li>
+							<li class="fragment">0,0,1,0,0 : Sélecteur ID</li>
+							<li class="fragment">0,1,0,0,0 : Style en ligne <div style="color: red;">...</li>
+							<li class="fragment">1,0,0,0,0 : Bazooka !important</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
+					<section>
+						<h2>Transitions</h2>
+						<p>Permet une transition douce entre l'ancienne valeur et la nouvelle valeur d'une propriété CSS lorsqu'un événement est déclenché via :</p>
+						<ul>
+							<li>Pseudo-classe :hover, :checked</li>
+							<li>JavaScript</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Transitions</h2>
+						<p>Pour définir une nouvelle transition animée, il est nécessaire de préciser au minimum :</p>
+						<ul>
+							<li>La ou les propriété(s) à animer</li>
+							<li>La durée de l'animation</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Transitions</h2>
+						<pre class="css"><code>transition-property: width;
+						transition-duration: 1s;
+						transition-timing-function: linear;
+						transition-delay: 2s;
+						
+						/* Ou bien */
+						transition: width 1s linear 2s;</code></pre>
+					</section>
 				</section>
 
 				<section>
